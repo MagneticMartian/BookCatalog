@@ -7,5 +7,5 @@ int main(int argc, char* argv[])
     if(isvalid(isbn))
         std::cout << "ISBN" << '\n';
     else
-        std::cout << "not ISBN" << '\n';
+        std::cout << "notISBN" << '\n';
 }
