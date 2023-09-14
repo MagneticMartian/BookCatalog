@@ -1,0 +1,1 @@
+curl -s https://isbndb.com/book/9780578222141 | hxnormalize | pup "title" | grep "|" | cut -d "|" -f 1

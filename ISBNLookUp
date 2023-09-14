@@ -1,0 +1,13 @@
+#!/bin/bash
+isbn=$1
+file_path=$HOME/Learning/CPP/BookCatalog
+
+isISBN=$(${file_path}/check_isbn $isbn)
+
+if [ $isISBN == "ISBN" ]
+then
+    title=$(curl -s https://isbndb.com/book/$isbn | hxnormalize | pup "title" | grep "|" | cut -d "|" -f 1)
+    echo $title
+else
+    echo "No Title Found"
+fi
